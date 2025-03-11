@@ -172,6 +172,201 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<p><strong>1. Theoretical Foundation</strong></p>
+<p><em>The Differential Equation:</em>
+- The starting point is Newton's second law for rotational motion. The torque acting on the pendulum is the sum of the restoring torque due to gravity, the damping torque, and the external driving torque.</p>
+<ul>
+<li>Mathematically:</li>
+<li>
+<p><span class="arithmatex">\(τ = Iα\)</span></p>
+</li>
+<li>
+<p>Where <span class="arithmatex">\(τ\)</span> is the total torque, I is the moment of inertia <span class="arithmatex">\((mL²)\)</span>, and <span class="arithmatex">\(α\)</span> is the angular acceleration <span class="arithmatex">\((θ'')\)</span></p>
+</li>
+<li>
+<p>The restoring torque is <span class="arithmatex">\(-mgLsin(θ)\)</span></p>
+</li>
+<li>
+<p>The damping torque is <span class="arithmatex">\(-bL²θ'\)</span></p>
+</li>
+<li>
+<p>The driving torque is <span class="arithmatex">\(mL²Acos(ωt)\)</span></p>
+</li>
+<li>
+<p>Combining these, we get: </p>
+</li>
+</ul>
+<div class="arithmatex">\[mL²θ'' = -mgLsin(θ) - bL²θ' + mL²Acos(ωt)\]</div>
+<ul>
+<li>Dividing by <span class="arithmatex">\(mL²\)</span> yields:</li>
+</ul>
+<div class="arithmatex">\[θ'' + (b/m)θ' + (g/L)sin(θ) = Acos(ωt)\]</div>
+<ul>
+<li><em>Small-Angle Approximation:</em></li>
+</ul>
+<p>For small angles, we use the Taylor series expansion of <span class="arithmatex">\(sin(θ):\)</span></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(sin(θ) = θ - θ³/3! + θ⁵/5! - ...\)</span></p>
+</li>
+<li>
+<p>For <span class="arithmatex">\(θ &lt;&lt; 1\)</span>, we can approximate <span class="arithmatex">\(sin(θ) ≈ θ\)</span>, simplifying the equation to:</p>
+</li>
+</ul>
+<div class="arithmatex">\[θ'' + (b/m)θ' + (g/L)θ = Acos(ωt)\]</div>
+<p>This approximation linearizes the equation, making it solvable using standard techniques.</p>
+<ul>
+<li>
+<p><em>General Solution (Linearized Equation):</em></p>
+</li>
+<li>
+<p>The general solution is the sum of the homogeneous solution <span class="arithmatex">\((θh)\)</span> and the particular solution <span class="arithmatex">\((θp)\)</span>.</p>
+</li>
+<li>
+<p><em>Homogeneous Solution (θh):</em></p>
+</li>
+</ul>
+<p>This solves the equation <span class="arithmatex">\(θ'' + γθ' + ω₀²θ = 0\)</span>, where <span class="arithmatex">\(γ = b/m\)</span> and <span class="arithmatex">\(ω₀² = g/L\)</span></p>
+<ul>
+<li>The characteristic equation is <span class="arithmatex">\(r² + γr + ω₀² = 0\)</span>, with roots:</li>
+</ul>
+<div class="arithmatex">\[r = (-γ ± √(γ² - 4ω₀²)) / 2\]</div>
+<ul>
+<li>
+<p>The nature of the roots determines the form of θh:</p>
+</li>
+<li>
+<p>Overdamped <span class="arithmatex">\((γ² &gt; 4ω₀²): θh = C₁e^(r₁t) + C₂e^(r₂t)\)</span></p>
+</li>
+<li>
+<p>Critically damped <span class="arithmatex">\((γ² = 4ω₀²): θh = (C₁ + C₂t)e^(-γt/2)\)</span></p>
+</li>
+<li>
+<p>Underdamped <span class="arithmatex">\((γ² &lt; 4ω₀²): θh = e^(-γt/2)(C₁cos(ωd t) + C₂sin(ωd t)), where ωd = √(ω₀² - γ²/4)\)</span></p>
+</li>
+<li>
+<p>Particular Solution (θp):</p>
+</li>
+<li>
+<p>We assume a solution of the form <span class="arithmatex">\(θp = Ccos(ωt) + Dsin(ωt)\)</span></p>
+</li>
+<li>
+<p>Substituting this into the differential equation and solving for C and D gives:</p>
+</li>
+</ul>
+<div class="arithmatex">\[C = A(ω₀² - ω²) / ((ω₀² - ω²)² + (γω)²)\]</div>
+<div class="arithmatex">\[D = Aγω / ((ω₀² - ω²)² + (γω)²)\]</div>
+<p>This can be rewritten as:</p>
+<div class="arithmatex">\[θp = (A / √((ω₀² - ω²)² + (γω)²)) * cos(ωt - φ)\]</div>
+<ul>
+<li>
+<p>Where <span class="arithmatex">\(φ = arctan(γω / (ω₀² - ω²))\)</span></p>
+</li>
+<li>
+<p><em>Resonance:</em>
+-Resonance occurs when the driving frequency <span class="arithmatex">\((ω)\)</span> is close to the natural frequency <span class="arithmatex">\((ω₀)\)</span></p>
+</li>
+<li>
+<p>The amplitude of θp is maximized when the denominator of the amplitude term is minimized.</p>
+</li>
+<li>
+<p>This occurs when <span class="arithmatex">\(ω ≈ √(ω₀² - γ²/2)\)</span></p>
+</li>
+<li>
+<p>The peak amplitude is:</p>
+</li>
+</ul>
+<div class="arithmatex">\[Amplitude = A / (γ√(ω₀² - γ²/4))\]</div>
+<ul>
+<li>
+<p>The sharper the resonance peak, the smaller the gamma value is.</p>
+</li>
+<li>
+<p><em>Analysis of Dynamics (Textual Explanation)</em></p>
+</li>
+<li>
+<p><strong>Damping (γ):</strong></p>
+</li>
+<li>
+<p>High damping leads to rapid dissipation of energy, resulting in smaller oscillation amplitudes and faster settling to steady-state.</p>
+</li>
+<li>
+<p>Low damping allows for larger amplitudes, especially near resonance, and slower decay of transient oscillations.</p>
+</li>
+<li>
+<p>Zero damping results in undamped oscillations with constant amplitude.</p>
+</li>
+<li>
+<p><strong>Driving Amplitude (A):</strong></p>
+</li>
+<li>
+<p>The driving amplitude directly scales the amplitude of the steady-state oscillations. </p>
+</li>
+<li>
+<p>At high amplitudes, the small-angle approximation breaks down, and nonlinear effects become significant.</p>
+</li>
+</ul>
+<p><strong>Driving Frequency (ω):</strong></p>
+<ul>
+<li>
+<p>Varying the driving frequency around the natural frequency (ω₀) leads to resonance phenomena.</p>
+</li>
+<li>
+<p>The closer <span class="arithmatex">\(ω\)</span> is to <span class="arithmatex">\(ω₀\)</span>, the larger the oscillation amplitude becomes.</p>
+</li>
+<li>
+<p>Far from <span class="arithmatex">\(ω₀\)</span>, the amplitude decreases.</p>
+</li>
+<li>
+<p>When the driving frequency is varied, and the other parameters allow for chaotic behaviour, the pendulum can change between periodic, and chaotic motion.</p>
+</li>
+<li>
+<p><strong>Transition to Chaos:</strong></p>
+</li>
+<li>
+<p>For large driving amplitudes and low damping, the pendulum can exhibit chaotic behavior.</p>
+</li>
+<li>
+<p>This is due to the nonlinearity of the sin(θ) term.</p>
+</li>
+<li>
+<p>Chaotic motion is characterized by:</p>
+</li>
+<li>
+<p>Sensitive dependence on initial conditions (butterfly effect).</p>
+</li>
+<li>
+<p>Unpredictable long-term behavior.</p>
+</li>
+<li>
+<p>Broad frequency spectrum.</p>
+</li>
+<li>
+<p>Poincare sections allow for the visualization of the attractors of the systems, and the change from simple attractors to strange attractors, which are a strong indicator of chaotic motion.</p>
+</li>
+<li>
+<p>Bifurcation diagrams are created by plotting the final stable value of the angle of the pendulum after a long simulation, while changing one parameter, like the driving force. This allows for the visualization of the points where the stable state of the pendulum changes.</p>
+</li>
+</ul>
+<p><strong>3. Practical Applications</strong></p>
+<ul>
+<li>
+<p>Energy Harvesting: Pendulums can be used to convert ambient vibrations into electrical energy. Resonance is exploited to maximize energy capture.</p>
+</li>
+<li>
+<p>Suspension Bridges: Understanding resonance is crucial to prevent catastrophic failures due to wind-induced oscillations.</p>
+</li>
+<li>
+<p>Oscillating Circuits (RLC Circuits): The forced damped pendulum is analogous to a driven RLC circuit, where resonance and damping play similar roles.</p>
+</li>
+<li>
+<p>Mechanical Systems: Vibration isolation, engine mounts, and other mechanical systems benefit from understanding forced damped oscillations.</p>
+</li>
+<li>
+<p>Human Gait: The human gait can be modeled as a series of coupled oscillators, with damping and forcing playing crucial roles.</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../image-1.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
