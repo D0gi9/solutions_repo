@@ -176,9 +176,9 @@
 <p><em>The Differential Equation:</em>
 - The starting point is Newton's second law for rotational motion. The torque acting on the pendulum is the sum of the restoring torque due to gravity, the damping torque, and the external driving torque.</p>
 <ul>
-<li>Mathematically:</li>
 <li>
-<p><span class="arithmatex">\(τ = Iα\)</span></p>
+<p>Mathematically:
+<span class="arithmatex">\(<span class="arithmatex">\(τ = Iα\)</span>\)</span></p>
 </li>
 <li>
 <p>Where <span class="arithmatex">\(τ\)</span> is the total torque, I is the moment of inertia <span class="arithmatex">\((mL²)\)</span>, and <span class="arithmatex">\(α\)</span> is the angular acceleration <span class="arithmatex">\((θ'')\)</span></p>
@@ -205,13 +205,9 @@
 <li><em>Small-Angle Approximation:</em></li>
 </ul>
 <p>For small angles, we use the Taylor series expansion of <span class="arithmatex">\(sin(θ):\)</span></p>
+<div class="arithmatex">\[sin(θ) = θ - θ³/3! + θ⁵/5! - ...\]</div>
 <ul>
-<li>
-<p><span class="arithmatex">\(sin(θ) = θ - θ³/3! + θ⁵/5! - ...\)</span></p>
-</li>
-<li>
-<p>For <span class="arithmatex">\(θ &lt;&lt; 1\)</span>, we can approximate <span class="arithmatex">\(sin(θ) ≈ θ\)</span>, simplifying the equation to:</p>
-</li>
+<li>For <span class="arithmatex">\(θ &lt;&lt; 1\)</span>, we can approximate <span class="arithmatex">\(sin(θ) ≈ θ\)</span>, simplifying the equation to:</li>
 </ul>
 <div class="arithmatex">\[θ'' + (b/m)θ' + (g/L)θ = Acos(ωt)\]</div>
 <p>This approximation linearizes the equation, making it solvable using standard techniques.</p>
@@ -234,33 +230,6 @@
 <ul>
 <li>
 <p>The nature of the roots determines the form of θh:</p>
-</li>
-<li>
-<p>Overdamped <span class="arithmatex">\((γ² &gt; 4ω₀²): θh = C₁e^(r₁t) + C₂e^(r₂t)\)</span></p>
-</li>
-<li>
-<p>Critically damped <span class="arithmatex">\((γ² = 4ω₀²): θh = (C₁ + C₂t)e^(-γt/2)\)</span></p>
-</li>
-<li>
-<p>Underdamped <span class="arithmatex">\((γ² &lt; 4ω₀²): θh = e^(-γt/2)(C₁cos(ωd t) + C₂sin(ωd t)), where ωd = √(ω₀² - γ²/4)\)</span></p>
-</li>
-<li>
-<p>Particular Solution (θp):</p>
-</li>
-<li>
-<p>We assume a solution of the form <span class="arithmatex">\(θp = Ccos(ωt) + Dsin(ωt)\)</span></p>
-</li>
-<li>
-<p>Substituting this into the differential equation and solving for C and D gives:</p>
-</li>
-</ul>
-<div class="arithmatex">\[C = A(ω₀² - ω²) / ((ω₀² - ω²)² + (γω)²)\]</div>
-<div class="arithmatex">\[D = Aγω / ((ω₀² - ω²)² + (γω)²)\]</div>
-<p>This can be rewritten as:</p>
-<div class="arithmatex">\[θp = (A / √((ω₀² - ω²)² + (γω)²)) * cos(ωt - φ)\]</div>
-<ul>
-<li>
-<p>Where <span class="arithmatex">\(φ = arctan(γω / (ω₀² - ω²))\)</span></p>
 </li>
 <li>
 <p><em>Resonance:</em>
