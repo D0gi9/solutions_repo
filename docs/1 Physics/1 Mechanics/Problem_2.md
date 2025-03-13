@@ -6,7 +6,7 @@
 - The starting point is Newton's second law for rotational motion. The torque acting on the pendulum is the sum of the restoring torque due to gravity, the damping torque, and the external driving torque.
 
 - Mathematically:
-- $τ = Iα$
+$$τ = Iα$$
 
 - Where $τ$ is the total torque, I is the moment of inertia $(mL²)$, and $α$ is the angular acceleration $(θ'')$
 
@@ -28,7 +28,7 @@ $$θ'' + (b/m)θ' + (g/L)sin(θ) = Acos(ωt)$$
 
 For small angles, we use the Taylor series expansion of $sin(θ):$
 
-- $sin(θ) = θ - θ³/3! + θ⁵/5! - ...$
+$$sin(θ) = θ - θ³/3! + θ⁵/5! - ...$$
 
 - For $θ << 1$, we can approximate $sin(θ) ≈ θ$, simplifying the equation to:
 
@@ -49,28 +49,6 @@ This solves the equation $θ'' + γθ' + ω₀²θ = 0$, where $γ = b/m$ and $�
 $$r = (-γ ± √(γ² - 4ω₀²)) / 2$$
 
 - The nature of the roots determines the form of θh:
-
-- Overdamped $(γ² > 4ω₀²): θh = C₁e^(r₁t) + C₂e^(r₂t)$
-
-- Critically damped $(γ² = 4ω₀²): θh = (C₁ + C₂t)e^(-γt/2)$
-
-- Underdamped $(γ² < 4ω₀²): θh = e^(-γt/2)(C₁cos(ωd t) + C₂sin(ωd t)), where ωd = √(ω₀² - γ²/4)$
-
-- Particular Solution (θp):
-
-- We assume a solution of the form $θp = Ccos(ωt) + Dsin(ωt)$
-
-- Substituting this into the differential equation and solving for C and D gives:
-
-$$C = A(ω₀² - ω²) / ((ω₀² - ω²)² + (γω)²)$$
-
-$$D = Aγω / ((ω₀² - ω²)² + (γω)²)$$
-
-This can be rewritten as:
-
-$$θp = (A / √((ω₀² - ω²)² + (γω)²)) * cos(ωt - φ)$$
-
-- Where $φ = arctan(γω / (ω₀² - ω²))$
 
 - *Resonance:*
 -Resonance occurs when the driving frequency $(ω)$ is close to the natural frequency $(ω₀)$
