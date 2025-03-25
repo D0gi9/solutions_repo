@@ -58,6 +58,8 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#v_2-kms-112">\(v_2\) (km/s) : 11.2</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_3/">Problem 3</a>
@@ -172,6 +174,112 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<p><strong>Escape Velocities and Cosmic Velocities</strong></p>
+<ul>
+<li>Introduction</li>
+</ul>
+<p>Escape velocity is the minimum speed an object must attain to break free from a celestial body's gravitational pull without further propulsion. The concept extends to cosmic velocities, which define critical speed thresholds for space missions:</p>
+<ul>
+<li>
+<p><strong>First Cosmic Velocity (Orbital Velocity):</strong> The speed needed to maintain a stable orbit around a body.</p>
+</li>
+<li>
+<p><strong>Second Cosmic Velocity (Escape Velocity):</strong> The speed required to escape a body's gravitational field entirely.</p>
+</li>
+<li>
+<p><strong>Third Cosmic Velocity (Interstellar Escape Velocity):</strong> The speed needed to leave a star system (e.g., the Solar System).</p>
+</li>
+</ul>
+<p>These velocities are foundational in space exploration, determining satellite launches, interplanetary missions, and potential interstellar travel.</p>
+<p><strong>Mathematical Derivation of Escape Velocity</strong></p>
+<p>The escape velocity <span class="arithmatex">\((v_\text{esc})\)</span> is derived from the balance between an object's kinetic energy and the gravitational potential energy needed to overcome a planet's gravity.</p>
+<p><strong>Gravitational Potential Energy (U)</strong></p>
+<p>The work required to move an object of mass <span class="arithmatex">\(m\)</span> from the surface (radius R) to infinity is:</p>
+<div class="arithmatex">\[U = \frac{GMm}{R}\]</div>
+<p>where:</p>
+<p><span class="arithmatex">\(G\)</span> = Gravitational constant <span class="arithmatex">\((6.674 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2})\)</span></p>
+<p><span class="arithmatex">\(M\)</span> = Mass of the celestial body</p>
+<p><span class="arithmatex">\(R\)</span> = Radius of the celestial body</p>
+<p><strong>Kinetic Energy (K)</strong></p>
+<p>To escape, the object must have sufficient kinetic energy to counteract 
+<span class="arithmatex">\(U\)</span>:</p>
+<p><span class="arithmatex">\(K = \frac{1}{2}mv_{\text{esc}}^2\)</span></p>
+<p><strong>Equating and Solving for <span class="arithmatex">\((v_\text{esc})\)</span></strong></p>
+<p>Setting <span class="arithmatex">\(K=U:\)</span></p>
+<div class="arithmatex">\[\frac{1}{2}mv_{\text{esc}}^2 = \frac{GMm}{R}\]</div>
+<div class="arithmatex">\[v_{\text{esc}} = \sqrt{\frac{2GM}{R}}\]</div>
+<p><strong>The Three Cosmic Velocities</strong></p>
+<p><span class="arithmatex">\((a)\)</span> First Cosmic Velocity (Orbital Velocity, <span class="arithmatex">\(v_1\)</span>)</p>
+<p>The minimum speed for a stable circular orbit near a planet’s surface (ignoring atmospheric drag):</p>
+<div class="arithmatex">\[v_1 = \sqrt{\frac{GM}{R}}\]</div>
+<p><strong>Physical Meaning:</strong> Satellites (e.g., the ISS) must reach this speed to avoid falling back to Earth.</p>
+<p><strong><span class="arithmatex">\((b)\)</span> Second Cosmic Velocity (Escape Velocity,<span class="arithmatex">\(v_2\)</span>)</strong></p>
+<p>The speed needed to leave a planet's gravitational influence:</p>
+<div class="arithmatex">\[v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} . v_1\]</div>
+<p><strong>Physical Meaning:</strong> Spacecraft (e.g., Apollo missions) must exceed this to reach the Moon or other planets.</p>
+<p><strong><span class="arithmatex">\((c)\)</span> Third Cosmic Velocity (Interstellar Escape,<span class="arithmatex">\(v_3\)</span>)</strong></p>
+<p>The speed required to escape the Solar System from Earth’s orbit (~42 km/s relative to the Sun).</p>
+<div class="arithmatex">\[v_3 = \sqrt{v_{\text{esc},\odot}^2 + v_{\text{orb},\oplus}^2}\]</div>
+<p>where:</p>
+<p><span class="arithmatex">\(v_{\text{esc},\odot}\)</span> = Escape velocity from the Sun at Earth's orbit (~42.1 km/s)</p>
+<p><span class="arithmatex">\(v_{\text{orb},\oplus}\)</span> = Earth's orbital speed (~29.8 km/s)</p>
+<p><strong>Physical Meaning:</strong> Probes like Voyager 1 must reach this to exit the Solar System.</p>
+<p><strong>Parameters Affecting Escape Velocities</strong></p>
+<p>The escape velocity depends on:</p>
+<p><strong>Mass <span class="arithmatex">\((M)\)</span>:</strong> More massive planets require higher escape speeds (e.g.,Jupiter's <span class="arithmatex">\(v_{\text{esc}}=59.5km/s\)</span>).</p>
+<p><strong>Radius <span class="arithmatex">\((R)\)</span>:</strong> Larger planets may have lower escape velocities if their mass is distributed over a bigger volume (e.g., Saturn's <span class="arithmatex">\(v_{\text{esc}} =35.5km/s\)</span>).</p>
+<p><strong>Examples for Celestial Bodies</strong></p>
+<hr/>
+<p><strong>Body:</strong> <strong>EARTH</strong></p>
+<p><strong>Mass <span class="arithmatex">\((M)\)</span></strong> : <span class="arithmatex">\(5.97 x 10^24kg\)</span></p>
+<p><strong>Radius <span class="arithmatex">\((R)\)</span></strong> : 6,371km</p>
+<p><strong><span class="arithmatex">\(v_1\)</span></strong> <strong>(km/s)</strong>: 7.9</p>
+<h2 id="v_2-kms-112"><strong><span class="arithmatex">\(v_2\)</span></strong> <strong>(km/s)</strong> : 11.2</h2>
+<p><strong>Body:</strong> <strong>MARS</strong></p>
+<p><strong>Mass <span class="arithmatex">\((M)\)</span></strong> : <span class="arithmatex">\(6.39 x 10^23kg\)</span></p>
+<p><strong>Radius <span class="arithmatex">\((R)\)</span></strong> : 3,390km</p>
+<p><strong><span class="arithmatex">\(v_1\)</span></strong> <strong>(km/s)</strong> : 3.6</p>
+<p><strong><span class="arithmatex">\(v_2\)</span> (km/s)</strong> : 5.0</p>
+<hr/>
+<p><strong>Body:</strong> <strong>JUPITER</strong></p>
+<p><strong>Mass <span class="arithmatex">\((M)\)</span></strong> : <span class="arithmatex">\(1.90 x 10^27kg\)</span></p>
+<p><strong>Radius <span class="arithmatex">\((R)\)</span></strong> : 69,911km</p>
+<p><strong><span class="arithmatex">\(v_1\)</span>(km/s)</strong> : 42.1</p>
+<p><strong><span class="arithmatex">\(v_2\)</span> (km/s)</strong> : 59.5</p>
+<hr/>
+<p><strong>Earth:</strong> Satellites need ~7.9 km/s to orbit; Moon missions require ~11.2 km/s.</p>
+<p><strong>Mars:</strong> Lower escape velocity (5.0 km/s) makes landing and takeoff easier than on Earth.</p>
+<p><strong>Jupiter:</strong> Extremely high <span class="arithmatex">\(v_2\)</span> (59.5 km/s) makes direct escape nearly impossible for current spacecraft.</p>
+<p><strong>Importance in Space Exploration</strong></p>
+<ul>
+<li>Satellite Launches:</li>
+</ul>
+<p>The first cosmic velocity determines the speed for Low Earth Orbit (LEO) satellites.</p>
+<ul>
+<li>Interplanetary Missions:</li>
+</ul>
+<p>The second cosmic velocity is critical for missions to Mars (e.g., Perseverance Rover).</p>
+<ul>
+<li>Interstellar Travel:</li>
+</ul>
+<p>The third cosmic velocity is essential for probes like Voyager 1 and future star-bound missions.</p>
+<p><strong>Graphical Representation</strong></p>
+<p>A comparison between first cosmic velocity (orbital) and second cosmic velocity </p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><strong>Extensions and Limitations</strong></p>
+<ul>
+<li>
+<p>Non-spherical Bodies: Irregular shapes (e.g., asteroids) require adjustments.</p>
+</li>
+<li>
+<p>Atmospheric Drag: Real-world launches need extra thrust to overcome air resistance.</p>
+</li>
+<li>
+<p>Relativistic Effects: Near light speed, Einstein’s corrections apply (unlikely for current tech).</p>
+</li>
+</ul>
+<p><strong>Conclusion</strong></p>
+<p>Escape and cosmic velocities are fundamental to spaceflight, dictating mission feasibility and energy requirements. From deploying satellites to planning interstellar voyages, these principles shape humanity’s reach into the cosmos. Future advancements in propulsion (e.g., fusion drives) may redefine these limits, but the underlying physics remains anchored in Newtonian gravity.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
