@@ -172,6 +172,141 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
+<p><strong>Introduction</strong></p>
+<p>When a payload is released from a moving rocket near Earth, its subsequent trajectory is determined by the fundamental principles of orbital mechanics. The path the payload follows depends critically on its initial position, velocity vector, and the gravitational influence of Earth. This analysis explores the possible trajectories—elliptical, parabolic, and hyperbolic—and their implications for space mission scenarios such as orbital insertion, atmospheric reentry, or escape from Earth's gravitational influence.</p>
+<h1 id="fundamental-physics">Fundamental Physics</h1>
+<p><strong>Newton's Law of Universal Gravitation</strong></p>
+<p>The gravitational force between Earth (mass <span class="arithmatex">\(M\)</span>) and the payload (mass <span class="arithmatex">\(m\)</span>) is given by:</p>
+<div class="arithmatex">\[F = -G \frac{Mm}{r^2} \hat{r}\]</div>
+<p>where:</p>
+<p><span class="arithmatex">\(G = 6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}\)</span> (gravitational constant)</p>
+<p><span class="arithmatex">\(r =\)</span> distance between Earth's center and the payload</p>
+<p>$\hat{r} = $ unit vector pointing from Earth's center to the payload</p>
+<p><strong>Equations of Motion</strong></p>
+<p>Using Newton's second law, the acceleration of the payload is:</p>
+<div class="arithmatex">\[a = \frac{F}{m} = \vec{g} = -\frac{GM}{r^2} \hat{r}\]</div>
+<p>In Cartesian coordinates (with Earth at the origin), this becomes a system of differential equations:</p>
+<div class="arithmatex">\[\frac{d^2x}{dt^2} = -\frac{GMx}{(x^2 + y^2 + z^2)^{3/2}}\]</div>
+<div class="arithmatex">\[\frac{d^2y}{dt^2} = -\frac{GMy}{(x^2 + y^2 + z^2)^{3/2}}\]</div>
+<div class="arithmatex">\[\frac{d^2z}{dt^2} = -\frac{GMz}{(x^2 + y^2 + z^2)^{3/2}}\]</div>
+<p>For simplicity, we'll consider 2D motion in the xy-plane.</p>
+<p><strong>Specific Orbital Energy</strong></p>
+<p>The shape of the orbit is determined by the specific orbital energy <span class="arithmatex">\((ε)\)</span>:</p>
+<div class="arithmatex">\[\epsilon = \frac{v^2}{2} - \frac{GM}{r}\]</div>
+<p>where v is the payload's velocity magnitude. The orbit type depends on ε:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(ε &lt; 0\)</span>: Elliptical orbit (bound)</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ε = 0\)</span>: Parabolic trajectory (escape exactly)</p>
+</li>
+<li>
+<p><span class="arithmatex">\(ε &gt; 0\)</span>: Hyperbolic trajectory (escape with excess energy)</p>
+</li>
+</ul>
+<p><strong>Angular Momentum and Orbit Shape</strong></p>
+<p>The specific angular momentum <span class="arithmatex">\((h)\)</span> is conserved:</p>
+<div class="arithmatex">\[h=r×v\]</div>
+<p>The magnitude h determines the orbit's eccentricity <span class="arithmatex">\((e)\)</span>:</p>
+<div class="arithmatex">\[e = \sqrt{1 + \frac{2\epsilon h^2}{G^2M^2}}\]</div>
+<p><strong>Initial Conditions and Trajectory Analysis</strong></p>
+<p>When a payload is released at altitude h above Earth's surface with initial velocity <span class="arithmatex">\(\mathbf{v}_0 = (v_{x0}, v_{y0})\)</span> , we calculate:</p>
+<p>Initial position: <span class="arithmatex">\(r₀ = R + h\)</span> where <span class="arithmatex">\(R\)</span> = Earth's radius (~6,371 km)</p>
+<p>Initial velocity magnitude: <span class="arithmatex">\(v₀ = √(v_{x0}² + v_{y0}²)\)</span></p>
+<p>Flight path angle: <span class="arithmatex">\(γ =\)</span> atan <span class="arithmatex">\(2(v_{y0}, v_{x0})\)</span></p>
+<p><strong>Critical Velocities</strong></p>
+<p>Circular orbit velocity at radius r:</p>
+<div class="arithmatex">\[v_{\text{circ}} = \sqrt{\frac{GM}{r}}\]</div>
+<p>Escape velocity (parabolic trajectory):</p>
+<div class="arithmatex">\[v_{\text{esc}} = \sqrt{\frac{2GM}{r}}\]</div>
+<p><strong>Possible Scenarios</strong></p>
+<p>Suborbital (Elliptical impact trajectory):</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(v₀ &lt; v_circ\)</span></p>
+</li>
+<li>
+<p>Payload falls back to Earth (reentry)</p>
+</li>
+</ul>
+<p><strong>Circular orbit:</strong></p>
+<ul>
+<li><span class="arithmatex">\(v₀ = v_circ\)</span> with <span class="arithmatex">\(γ = 0\)</span> (perfectly horizontal)</li>
+</ul>
+<p><strong>Elliptical orbit:</strong></p>
+<ul>
+<li>v_circ &lt; v₀ &lt; v_esc</li>
+</ul>
+<p><strong>Escape trajectory:</strong></p>
+<ul>
+<li>v₀ ≥ v_esc</li>
+</ul>
+<p><strong>Numerical Solution Approach</strong></p>
+<p>To compute the trajectory, we numerically integrate the equations of motion using methods like the Runge-Kutta 4th order (RK4):</p>
+<p>For each time step Δt:</p>
+<ul>
+<li>
+<p>Compute acceleration components <span class="arithmatex">\(aₓ, a_y\)</span></p>
+</li>
+<li>
+<p>Update velocity: <span class="arithmatex">\(vₓ += aₓΔt, v_y += a_yΔt\)</span></p>
+</li>
+<li>
+<p>Update position: <span class="arithmatex">\(x += vₓΔt, y += v_yΔt\)</span></p>
+</li>
+</ul>
+<p><strong>Example Simulation Parameters</strong></p>
+<p>Consider a payload released at:</p>
+<ul>
+<li>
+<p>Altitude: 300 km (r = 6,671 km)</p>
+</li>
+<li>
+<p>Initial velocities (all cases start with purely horizontal velocity):</p>
+</li>
+</ul>
+<p><strong>Suborbital:</strong></p>
+<p>v₀ = 5 km/s (&lt; 7.73 km/s circular)</p>
+<p><strong>Circular orbit:</strong></p>
+<p>v₀ = 7.73 km/s</p>
+<p><strong>Elliptical orbit:</strong></p>
+<p>v₀ = 9 km/s</p>
+<p><strong>Escape:</strong></p>
+<p>v₀ = 11 km/s (&gt; 10.9 km/s escape)</p>
+<p><strong>Graph Example</strong></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<p><strong>Results and Visualization</strong></p>
+<p>The trajectories would show:</p>
+<ul>
+<li>
+<p>Suborbital: Steep parabola intersecting Earth</p>
+</li>
+<li>
+<p>Circular: Perfect circle around Earth</p>
+</li>
+<li>
+<p>Elliptical: Oval-shaped orbit with perigee at release point</p>
+</li>
+<li>
+<p>Hyperbolic: Open curve departing Earth</p>
+</li>
+</ul>
+<p><strong>Applications</strong></p>
+<p>Understanding these trajectories is crucial for:</p>
+<ul>
+<li>
+<p>Satellite deployment (achieving desired orbits)</p>
+</li>
+<li>
+<p>Spacecraft reentry (controlled descent)</p>
+</li>
+<li>
+<p>Interplanetary missions (gravity assists, escape trajectories)</p>
+</li>
+</ul>
+<p>This analysis provides the foundation for mission planning and payload delivery in space operations. The same principles extend to orbital mechanics around any celestial body.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
