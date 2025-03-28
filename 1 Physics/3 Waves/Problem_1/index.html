@@ -172,6 +172,96 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="interference-patterns-from-regular-polygon-wave-sources">Interference Patterns from Regular Polygon Wave Sources</h1>
+<p><strong>Introduction</strong></p>
+<p>When waves from multiple sources interact, they create intricate interference patterns due to superposition. Here, we analyze the patterns formed by N identical wave sources placed at the vertices of a regular polygon.</p>
+<p><strong>Mathematical Framework</strong></p>
+<p><strong>Wave Equation for a Single Source</strong></p>
+<p>Each point source at position <span class="arithmatex">\((X_n,Y_n)\)</span> generates a circular wave on the water surface:</p>
+<div class="arithmatex">\[\eta_n(x,y,t) = \frac{A}{\sqrt{r_n}} \cos(kr_n - \omega t + \phi_n)\]</div>
+<p><strong>Where:</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\(A =\)</span> wave amplitude</p>
+</li>
+<li>
+<p>$r_n = \sqrt{(x - x_n)^2 + (y - y_n)^2} = $ distance from source <span class="arithmatex">\(n\)</span> to point <span class="arithmatex">\((x,y)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(k = \frac{2\pi}{\lambda} \quad \text{where } k = \text{wavenumber and } \lambda = \text{wavelength}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\omega = 2\pi f =\)</span>= angular frequency <span class="arithmatex">\((f=frequency)\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\phi_n =\)</span> phase of source <span class="arithmatex">\(n\)</span></p>
+</li>
+</ul>
+<p><strong>Superposition of Waves</strong></p>
+<p>The total displacement at any point <span class="arithmatex">\((x,y)\)</span> is the sum of waves from all <span class="arithmatex">\(N\)</span> sources:</p>
+<div class="arithmatex">\[\eta_{\text{total}}(x,y,t) = \sum_{n=1}^{N} \eta_n(x,y,t) = \sum_{n=1}^{N} \frac{A}{\sqrt{r_n}} \cos(kr_n - \omega t + \phi_n)\]</div>
+<p><strong>Regular Polygon Configuration</strong></p>
+<p>For an <span class="arithmatex">\(N-sided\)</span> polygon centered at the origin with radius <span class="arithmatex">\(R\)</span>, the positions of the sources are:</p>
+<div class="arithmatex">\[x_n = R \cos\left(\frac{2\pi n}{N}\right), \quad y_n = R \sin\left(\frac{2\pi n}{N}\right), \quad n = 0, 1, 2, \ldots, N-1\]</div>
+<p><strong>Interference Analysis</strong></p>
+<p>Constructive Interference (Maxima)</p>
+<p>Waves add up when their phases align:</p>
+<div class="arithmatex">\[kr_1 - \omega t + \phi_1 = kr_2 - \omega t + \phi_2 = \cdots = kr_N - \omega t + \phi_N + 2\pi m\]</div>
+<p>For identical phases <span class="arithmatex">\(\phi_n = \phi\)</span> this simplifies to:</p>
+<div class="arithmatex">\[r_1 \approx r_2 \approx \cdots \approx r_N + m\lambda \quad (m \in \mathbb{Z})\]</div>
+<p>These regions appear as bright spots where waves reinforce each other.</p>
+<p><strong>Destructive Interference (Minima)</strong></p>
+<p>Waves cancel out when they are out of phase. For two sources, complete cancellation occurs when:</p>
+<div class="arithmatex">\[k(r_1 - r_2) + (\phi_1 - \phi_2) = \pi + 2\pi m\]</div>
+<p>For <span class="arithmatex">\(N\)</span> sources, cancellation is more complex but happens where the sum of waves is zero.</p>
+<p><strong>Resulting Interference Patterns</strong></p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>
+<p>Symmetry → <span class="arithmatex">\(N-fold\)</span> rotational symmetry <span class="arithmatex">\((e.g., hexagonal for N=6)\)</span></p>
+</li>
+<li>
+<p>Nodal Lines → Lines where waves cancel <span class="arithmatex">\((\eta_{\text{total}} \approx 0)\)</span></p>
+</li>
+<li>
+<p>Antinodal Regions → Areas of maximum wave amplitude</p>
+</li>
+<li>
+<p>Amplitude Decay → Falls as <span class="arithmatex">\(\frac{1}{\sqrt{r}}\)</span> from each source</p>
+</li>
+</ul>
+<p><strong>Time Evolution &amp; Intensity</strong></p>
+<p>The pattern oscillates with frequency <span class="arithmatex">\(f\)</span>, but the time-averaged intensity is:</p>
+<div class="arithmatex">\[I(x,y) \propto \langle \eta_{\text{total}}^2 \rangle = \sum_{n=1}^{N} \frac{A^2}{r_n} + 2 \sum_{n&lt;m} \frac{A^2}{\sqrt{r_n r_m}} \cos(k(r_n - r_m) + (\phi_n - \phi_m))\]</div>
+<p><strong>Graph Example</strong></p>
+<ul>
+<li>(Dipole)  Hyperbolic nodal lines, classic two-source interference</li>
+</ul>
+<p><img alt="" src="../image.png"/></p>
+<ul>
+<li>(Equilateral Triangle)    Hexagonal symmetry in far field</li>
+</ul>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<ul>
+<li>(Square)  Strong diagonal nodal lines, checkerboard-like maxima</li>
+</ul>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<ul>
+<li>(Hexagon) Complex flower-like pattern with 6-fold symmetry</li>
+</ul>
+<p><img alt="alt text" src="../image-3.png"/></p>
+<p><strong>Conclusion</strong></p>
+<ul>
+<li>
+<p>The number of sides <span class="arithmatex">\((N)\)</span> determines the symmetry of the pattern.</p>
+</li>
+<li>
+<p>The wavelength <span class="arithmatex">\((λ)\)</span> controls the spacing of interference fringes.</p>
+</li>
+<li>
+<p>Applications: Antenna arrays, acoustics, quantum wave interference.</p>
+</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
