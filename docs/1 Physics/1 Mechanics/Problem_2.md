@@ -2,110 +2,83 @@
 
 **1. Theoretical Foundation**
 
-*The Differential Equation:*
-- The starting point is Newton's second law for rotational motion. The torque acting on the pendulum is the sum of the restoring torque due to gravity, the damping torque, and the external driving torque.
+**Governing Differential Equation**
 
-- Mathematically:
-$$τ = Iα$$
+The motion of a forced damped pendulum is described by the nonlinear second-order differential equation:
 
-- Where $τ$ is the total torque, I is the moment of inertia $(mL²)$, and $α$ is the angular acceleration $(θ'')$
+$$\frac{d^2\theta}{dt^2} + 2\beta\frac{d\theta}{dt} + \omega_0^2\sin\theta = F\cos(\omega t)$$
 
-- The restoring torque is $-mgLsin(θ)$
+where:
 
-- The damping torque is $-bL²θ'$
+$\theta(t) = \text{Angular displacement (rad)}$
 
-- The driving torque is $mL²Acos(ωt)$
+$\beta = \frac{b}{2m} = \text{Damping coefficient (s}^{-1}\text{)}$
 
-- Combining these, we get: 
+$\omega_0 = \sqrt{\frac{g}{L}} = \text{Natural frequency (undamped, s}^{-1}\text{)}$
 
-$$mL²θ'' = -mgLsin(θ) - bL²θ' + mL²Acos(ωt)$$
+$F = \frac{A}{mL} = \text{Driving force amplitude (s}^{-2}\text{)}$
 
-- Dividing by $mL²$ yields:
+$\omega = \text{Driving frequency (s}^{-1}\text{)}$
 
-$$θ'' + (b/m)θ' + (g/L)sin(θ) = Acos(ωt)$$
+**Small-Angle Approximation (Linearized Solution)**
 
-- *Small-Angle Approximation:*
+$\text{For small oscillations }
+(\theta \ll 1),\sin\theta \approx \theta,$ $\text{ reducing the equation to a forced damped harmonic oscillator:}$
 
-For small angles, we use the Taylor series expansion of $sin(θ):$
+$$\frac{d^2\theta}{dt^2} + 2\beta\frac{d\theta}{dt} + \omega_0^2\theta = F\cos(\omega t)$$
 
-$$sin(θ) = θ - θ³/3! + θ⁵/5! - ...$$
+The general solution consists of:
 
-- For $θ << 1$, we can approximate $sin(θ) ≈ θ$, simplifying the equation to:
+Transient Solution (homogeneous part, decays exponentially):
 
-$$θ'' + (b/m)θ' + (g/L)θ = Acos(ωt)$$
+$$\theta_h(t) = e^{-\beta t}(C_1\cos(\omega_d t) + C_2\sin(\omega_d t))$$
 
-This approximation linearizes the equation, making it solvable using standard techniques.
+$\text{where } \omega_d = \sqrt{\omega_0^2 - \beta^2} \text{ is the damped natural frequency.}$
 
-- *General Solution (Linearized Equation):*
+Steady-State Solution (particular solution, persists):
 
-- The general solution is the sum of the homogeneous solution $(θh)$ and the particular solution $(θp)$.
+$$\theta_p(t) = \Theta\cos(\omega t - \phi)$$
 
-- *Homogeneous Solution (θh):*
+where:
 
-This solves the equation $θ'' + γθ' + ω₀²θ = 0$, where $γ = b/m$ and $ω₀² = g/L$
+Amplitude (Θ): $$\Theta = \frac{F}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\beta\omega)^2}}$$
 
-- The characteristic equation is $r² + γr + ω₀² = 0$, with roots:
+Phase Lag (ϕ):$$\phi = \tan^{-1}\left(\frac{2\beta\omega}{\omega_0^2 - \omega^2}\right)$$
 
-$$r = (-γ ± √(γ² - 4ω₀²)) / 2$$
+**Resonance Conditions**
 
-- The nature of the roots determines the form of θh:
+The system exhibits resonance when the driving frequency ω matches the effective natural frequency:
 
-- *Resonance:*
--Resonance occurs when the driving frequency $(ω)$ is close to the natural frequency $(ω₀)$
+$\text{Amplitude Resonance: } \omega = \sqrt{\omega_0^2 - 2\beta^2}$
 
-- The amplitude of θp is maximized when the denominator of the amplitude term is minimized.
+$\text{Energy Resonance: } \omega = \omega_0 \text{ (max power transfer)}$
 
-- This occurs when $ω ≈ √(ω₀² - γ²/2)$
+At resonance:
 
-- The peak amplitude is:
+The amplitude Θ peaks.
 
-$$Amplitude = A / (γ√(ω₀² - γ²/4))$$
+$\text{The phase lag } \phi \approx \frac{\pi}{2}$
 
-- The sharper the resonance peak, the smaller the gamma value is.
+**Analysis of Dynamics**
 
-2. *Analysis of Dynamics (Textual Explanation)*
+Influence of Parameters 
 
-- **Damping (γ):**
 
-- High damping leads to rapid dissipation of energy, resulting in smaller oscillation amplitudes and faster settling to steady-state.
+Damping $(β)$:Higher $β$ reduces oscillation amplitude and broadens the resonance peak.
 
-- Low damping allows for larger amplitudes, especially near resonance, and slower decay of transient oscillations.
+Driving Amplitude $(F)$: Larger $F$ increases the steady-state amplitude but does not shift resonance.
 
-- Zero damping results in undamped oscillations with constant amplitude.
+Driving Frequency (ω):$\text{Close to } \omega_0, \text{ large oscillations 
+occur; far from } \omega_0, \text{ the system barely responds.}$
 
-- **Driving Amplitude (A):**
+**Transition to Chaos**
 
-- The driving amplitude directly scales the amplitude of the steady-state oscillations. 
+$\text{For large } \theta, \text{ nonlinearity } (\sin\theta \neq \theta) \text{ leads to:}$
 
-- At high amplitudes, the small-angle approximation breaks down, and nonlinear effects become significant.
+Period-Doubling Bifurcations: The system transitions from periodic to quasiperiodic and eventually chaotic motion.
 
-**Driving Frequency (ω):**
+$ \text{Sensitivity to Initial Conditions: Small changes in } \theta(0) \text{ or } \dot{\theta}(0) \text{ lead to drastically different trajectories.}$
 
-- Varying the driving frequency around the natural frequency (ω₀) leads to resonance phenomena.
-
-- The closer $ω$ is to $ω₀$, the larger the oscillation amplitude becomes.
-
-- Far from $ω₀$, the amplitude decreases.
-
-- When the driving frequency is varied, and the other parameters allow for chaotic behaviour, the pendulum can change between periodic, and chaotic motion.
-
-- **Transition to Chaos:**
-
-- For large driving amplitudes and low damping, the pendulum can exhibit chaotic behavior.
-
-- This is due to the nonlinearity of the sin(θ) term.
-
-- Chaotic motion is characterized by:
-
-- Sensitive dependence on initial conditions (butterfly effect).
-
-- Unpredictable long-term behavior.
-
-- Broad frequency spectrum.
-
-- Poincare sections allow for the visualization of the attractors of the systems, and the change from simple attractors to strange attractors, which are a strong indicator of chaotic motion.
-
-- Bifurcation diagrams are created by plotting the final stable value of the angle of the pendulum after a long simulation, while changing one parameter, like the driving force. This allows for the visualization of the points where the stable state of the pendulum changes.
 
 **3. Practical Applications**
 
