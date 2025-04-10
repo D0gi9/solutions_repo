@@ -3,9 +3,13 @@
 
 Projectile motion follows Newtonian mechanics and can be described by kinematic equations. The motion can be broken down into horizontal and vertical components:
 
-Horizontal motion:$$V_0cos(0)t:$$
+Horizontal motion:
 
-Vertical motion: $$y=v_0sin(0)t-\frac{1}{2}gt^2$$
+$$x = v_0 \cos(\theta) \cdot t$$
+
+Vertical motion: 
+
+$$y = v_0 \sin(\theta) \cdot t - \frac{1}{2}gt^2$$
 
 To derive the range equation, we determine the time of flight by solving for when the projectile returns to the ground $(y = 0):$
 
