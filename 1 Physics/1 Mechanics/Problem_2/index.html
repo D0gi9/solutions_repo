@@ -173,150 +173,45 @@
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
 <p><strong>1. Theoretical Foundation</strong></p>
-<p><em>The Differential Equation:</em>
-- The starting point is Newton's second law for rotational motion. The torque acting on the pendulum is the sum of the restoring torque due to gravity, the damping torque, and the external driving torque.</p>
-<ul>
-<li>
-<p>Mathematically:
-<span class="arithmatex">\(<span class="arithmatex">\(τ = Iα\)</span>\)</span></p>
-</li>
-<li>
-<p>Where <span class="arithmatex">\(τ\)</span> is the total torque, I is the moment of inertia <span class="arithmatex">\((mL²)\)</span>, and <span class="arithmatex">\(α\)</span> is the angular acceleration <span class="arithmatex">\((θ'')\)</span></p>
-</li>
-<li>
-<p>The restoring torque is <span class="arithmatex">\(-mgLsin(θ)\)</span></p>
-</li>
-<li>
-<p>The damping torque is <span class="arithmatex">\(-bL²θ'\)</span></p>
-</li>
-<li>
-<p>The driving torque is <span class="arithmatex">\(mL²Acos(ωt)\)</span></p>
-</li>
-<li>
-<p>Combining these, we get: </p>
-</li>
-</ul>
-<div class="arithmatex">\[mL²θ'' = -mgLsin(θ) - bL²θ' + mL²Acos(ωt)\]</div>
-<ul>
-<li>Dividing by <span class="arithmatex">\(mL²\)</span> yields:</li>
-</ul>
-<div class="arithmatex">\[θ'' + (b/m)θ' + (g/L)sin(θ) = Acos(ωt)\]</div>
-<ul>
-<li><em>Small-Angle Approximation:</em></li>
-</ul>
-<p>For small angles, we use the Taylor series expansion of <span class="arithmatex">\(sin(θ):\)</span></p>
-<div class="arithmatex">\[sin(θ) = θ - θ³/3! + θ⁵/5! - ...\]</div>
-<ul>
-<li>For <span class="arithmatex">\(θ &lt;&lt; 1\)</span>, we can approximate <span class="arithmatex">\(sin(θ) ≈ θ\)</span>, simplifying the equation to:</li>
-</ul>
-<div class="arithmatex">\[θ'' + (b/m)θ' + (g/L)θ = Acos(ωt)\]</div>
-<p>This approximation linearizes the equation, making it solvable using standard techniques.</p>
-<ul>
-<li>
-<p><em>General Solution (Linearized Equation):</em></p>
-</li>
-<li>
-<p>The general solution is the sum of the homogeneous solution <span class="arithmatex">\((θh)\)</span> and the particular solution <span class="arithmatex">\((θp)\)</span>.</p>
-</li>
-<li>
-<p><em>Homogeneous Solution (θh):</em></p>
-</li>
-</ul>
-<p>This solves the equation <span class="arithmatex">\(θ'' + γθ' + ω₀²θ = 0\)</span>, where <span class="arithmatex">\(γ = b/m\)</span> and <span class="arithmatex">\(ω₀² = g/L\)</span></p>
-<ul>
-<li>The characteristic equation is <span class="arithmatex">\(r² + γr + ω₀² = 0\)</span>, with roots:</li>
-</ul>
-<div class="arithmatex">\[r = (-γ ± √(γ² - 4ω₀²)) / 2\]</div>
-<ul>
-<li>
-<p>The nature of the roots determines the form of θh:</p>
-</li>
-<li>
-<p><em>Resonance:</em>
--Resonance occurs when the driving frequency <span class="arithmatex">\((ω)\)</span> is close to the natural frequency <span class="arithmatex">\((ω₀)\)</span></p>
-</li>
-<li>
-<p>The amplitude of θp is maximized when the denominator of the amplitude term is minimized.</p>
-</li>
-<li>
-<p>This occurs when <span class="arithmatex">\(ω ≈ √(ω₀² - γ²/2)\)</span></p>
-</li>
-<li>
-<p>The peak amplitude is:</p>
-</li>
-</ul>
-<div class="arithmatex">\[Amplitude = A / (γ√(ω₀² - γ²/4))\]</div>
-<ul>
-<li>
-<p>The sharper the resonance peak, the smaller the gamma value is.</p>
-</li>
-<li>
-<p><em>Analysis of Dynamics (Textual Explanation)</em></p>
-</li>
-<li>
-<p><strong>Damping (γ):</strong></p>
-</li>
-<li>
-<p>High damping leads to rapid dissipation of energy, resulting in smaller oscillation amplitudes and faster settling to steady-state.</p>
-</li>
-<li>
-<p>Low damping allows for larger amplitudes, especially near resonance, and slower decay of transient oscillations.</p>
-</li>
-<li>
-<p>Zero damping results in undamped oscillations with constant amplitude.</p>
-</li>
-<li>
-<p><strong>Driving Amplitude (A):</strong></p>
-</li>
-<li>
-<p>The driving amplitude directly scales the amplitude of the steady-state oscillations. </p>
-</li>
-<li>
-<p>At high amplitudes, the small-angle approximation breaks down, and nonlinear effects become significant.</p>
-</li>
-</ul>
-<p><strong>Driving Frequency (ω):</strong></p>
-<ul>
-<li>
-<p>Varying the driving frequency around the natural frequency (ω₀) leads to resonance phenomena.</p>
-</li>
-<li>
-<p>The closer <span class="arithmatex">\(ω\)</span> is to <span class="arithmatex">\(ω₀\)</span>, the larger the oscillation amplitude becomes.</p>
-</li>
-<li>
-<p>Far from <span class="arithmatex">\(ω₀\)</span>, the amplitude decreases.</p>
-</li>
-<li>
-<p>When the driving frequency is varied, and the other parameters allow for chaotic behaviour, the pendulum can change between periodic, and chaotic motion.</p>
-</li>
-<li>
-<p><strong>Transition to Chaos:</strong></p>
-</li>
-<li>
-<p>For large driving amplitudes and low damping, the pendulum can exhibit chaotic behavior.</p>
-</li>
-<li>
-<p>This is due to the nonlinearity of the sin(θ) term.</p>
-</li>
-<li>
-<p>Chaotic motion is characterized by:</p>
-</li>
-<li>
-<p>Sensitive dependence on initial conditions (butterfly effect).</p>
-</li>
-<li>
-<p>Unpredictable long-term behavior.</p>
-</li>
-<li>
-<p>Broad frequency spectrum.</p>
-</li>
-<li>
-<p>Poincare sections allow for the visualization of the attractors of the systems, and the change from simple attractors to strange attractors, which are a strong indicator of chaotic motion.</p>
-</li>
-<li>
-<p>Bifurcation diagrams are created by plotting the final stable value of the angle of the pendulum after a long simulation, while changing one parameter, like the driving force. This allows for the visualization of the points where the stable state of the pendulum changes.</p>
-</li>
-</ul>
+<p><strong>Governing Differential Equation</strong></p>
+<p>The motion of a forced damped pendulum is described by the nonlinear second-order differential equation:</p>
+<div class="arithmatex">\[\frac{d^2\theta}{dt^2} + 2\beta\frac{d\theta}{dt} + \omega_0^2\sin\theta = F\cos(\omega t)\]</div>
+<p>where:</p>
+<p><span class="arithmatex">\(\theta(t) = \text{Angular displacement (rad)}\)</span></p>
+<p><span class="arithmatex">\(\beta = \frac{b}{2m} = \text{Damping coefficient (s}^{-1}\text{)}\)</span></p>
+<p><span class="arithmatex">\(\omega_0 = \sqrt{\frac{g}{L}} = \text{Natural frequency (undamped, s}^{-1}\text{)}\)</span></p>
+<p><span class="arithmatex">\(F = \frac{A}{mL} = \text{Driving force amplitude (s}^{-2}\text{)}\)</span></p>
+<p><span class="arithmatex">\(\omega = \text{Driving frequency (s}^{-1}\text{)}\)</span></p>
+<p><strong>Small-Angle Approximation (Linearized Solution)</strong></p>
+<p><span class="arithmatex">\(\text{For small oscillations }
+(\theta \ll 1),\sin\theta \approx \theta,\)</span> <span class="arithmatex">\(\text{ reducing the equation to a forced damped harmonic oscillator:}\)</span></p>
+<div class="arithmatex">\[\frac{d^2\theta}{dt^2} + 2\beta\frac{d\theta}{dt} + \omega_0^2\theta = F\cos(\omega t)\]</div>
+<p>The general solution consists of:</p>
+<p>Transient Solution (homogeneous part, decays exponentially):</p>
+<div class="arithmatex">\[\theta_h(t) = e^{-\beta t}(C_1\cos(\omega_d t) + C_2\sin(\omega_d t))\]</div>
+<p><span class="arithmatex">\(\text{where } \omega_d = \sqrt{\omega_0^2 - \beta^2} \text{ is the damped natural frequency.}\)</span></p>
+<p>Steady-State Solution (particular solution, persists):</p>
+<div class="arithmatex">\[\theta_p(t) = \Theta\cos(\omega t - \phi)\]</div>
+<p>where:</p>
+<p>Amplitude (Θ): <span class="arithmatex">\(<span class="arithmatex">\(\Theta = \frac{F}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2\beta\omega)^2}}\)</span>\)</span></p>
+<p>Phase Lag (ϕ):<span class="arithmatex">\(<span class="arithmatex">\(\phi = \tan^{-1}\left(\frac{2\beta\omega}{\omega_0^2 - \omega^2}\right)\)</span>\)</span></p>
+<p><strong>Resonance Conditions</strong></p>
+<p>The system exhibits resonance when the driving frequency ω matches the effective natural frequency:</p>
+<p><span class="arithmatex">\(\text{Amplitude Resonance: } \omega = \sqrt{\omega_0^2 - 2\beta^2}\)</span></p>
+<p><span class="arithmatex">\(\text{Energy Resonance: } \omega = \omega_0 \text{ (max power transfer)}\)</span></p>
+<p>At resonance:</p>
+<p>The amplitude Θ peaks.</p>
+<p><span class="arithmatex">\(\text{The phase lag } \phi \approx \frac{\pi}{2}\)</span></p>
+<p><strong>Analysis of Dynamics</strong></p>
+<p>Influence of Parameters </p>
+<p>Damping <span class="arithmatex">\((β)\)</span>:Higher <span class="arithmatex">\(β\)</span> reduces oscillation amplitude and broadens the resonance peak.</p>
+<p>Driving Amplitude <span class="arithmatex">\((F)\)</span>: Larger <span class="arithmatex">\(F\)</span> increases the steady-state amplitude but does not shift resonance.</p>
+<p>Driving Frequency (ω):<span class="arithmatex">\(\text{Close to } \omega_0, \text{ large oscillations 
+occur; far from } \omega_0, \text{ the system barely responds.}\)</span></p>
+<p><strong>Transition to Chaos</strong></p>
+<p><span class="arithmatex">\(\text{For large } \theta, \text{ nonlinearity } (\sin\theta \neq \theta) \text{ leads to:}\)</span></p>
+<p>Period-Doubling Bifurcations: The system transitions from periodic to quasiperiodic and eventually chaotic motion.</p>
+<p>$ \text{Sensitivity to Initial Conditions: Small changes in } \theta(0) \text{ or } \dot{\theta}(0) \text{ lead to drastically different trajectories.}$</p>
 <p><strong>3. Practical Applications</strong></p>
 <ul>
 <li>
