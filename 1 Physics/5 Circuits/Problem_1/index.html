@@ -172,6 +172,46 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="problem-1_1">Problem 1</h1>
+<p><strong>Series Reduction</strong></p>
+<p>Two resistors (edges) are in series if they share a common node with no other edges connected to that node (i.e., the node has degree 2).</p>
+<p>The equivalent resistance for two resistors in series is:</p>
+<div class="arithmatex">\[R_{\text{eq}} = R_1 + R_2\]</div>
+<p><strong>Parallel Reduction</strong></p>
+<p>Two resistors are in parallel if they connect the same pair of nodes.</p>
+<p>The equivalent resistance for two resistors in parallel is:</p>
+<div class="arithmatex">\[R_{\text{eq}} = R_1 \cdot R_2\]</div>
+<p><strong>Algorithm Description (Step-by-Step)</strong></p>
+<p><strong>Step 1: Input Representation</strong></p>
+<p>Represent the circuit as a weighted undirected graph <span class="arithmatex">\(G=(V,E)\)</span></p>
+<p>Each edge <span class="arithmatex">\((u,v,w)\)</span> corresponds to a resistor of resistance <span class="arithmatex">\(wΩ\)</span></p>
+<p><strong>Step 2: Identify Series Nodes</strong></p>
+<p>Traverse nodes:</p>
+<p>If a node <span class="arithmatex">\(x\)</span> has degree 2 (i.e., two connections) and is not a terminal node:</p>
+<p>Let its neighbors be a and b</p>
+<p>Replace edges <span class="arithmatex">\((a,x)\)</span> and <span class="arithmatex">\((x,b)\)</span> with a new edge <span class="arithmatex">\((a,b)\)</span></p>
+<p>New resistance:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(R_{\text{ab}} = R_{\text{ax}} + R_{\text{xb}}\)</span>\)</span></p>
+<p>Remove node <span class="arithmatex">\(x\)</span></p>
+<p><strong>Step 3: Identify Parallel Edges</strong></p>
+<p>For every pair of nodes <span class="arithmatex">\((u,v):\)</span></p>
+<p>If multiple edges exist between them:</p>
+<p>Combine all resistors in parallel using:</p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(R_{uv} = \sum_{i=1}^{n} R_i\)</span>\)</span></p>
+<p>Replace with a single edge of weight <span class="arithmatex">\(R_{\text{uv}}\)</span></p>
+<p><strong>Step 4: Repeat Until Simplified</strong></p>
+<p>Continue alternating between series and parallel simplifications</p>
+<p>Terminate when:</p>
+<p>The graph is reduced to a single edge between the source and sink</p>
+<p><strong>Graph Examples</strong></p>
+<p><strong>Series Resistors Visualization</strong></p>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><strong>Parallel Resistors Visualization</strong></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><strong>Nested Configuration (Parallel Inside Series)</strong></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<p><strong>Graph Reduction Step Example</strong></p>
+<p><img alt="alt text" src="../image-3.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
