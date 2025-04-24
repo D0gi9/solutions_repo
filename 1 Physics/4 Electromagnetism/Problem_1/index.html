@@ -172,6 +172,109 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<p><strong>Introduction to the Lorentz Force</strong></p>
+<p>The Lorentz force describes the combined influence of electric and magnetic fields on a charged particle:</p>
+<div class="arithmatex">\[F = qE + qv \times B\]</div>
+<p>where:</p>
+<ul>
+<li>
+<p><strong>F</strong> = Force acting on the particle (N)</p>
+</li>
+<li>
+<p><strong>q</strong> = Charge of the particle (C)</p>
+</li>
+<li>
+<p><strong>E</strong> = Electric field (V/m)</p>
+</li>
+<li>
+<p><strong>v</strong> = Velocity of the particle (m/s)</p>
+</li>
+<li>
+<p><strong>B</strong> = Magnetic field (T)</p>
+</li>
+</ul>
+<p>This force governs the motion of charged particles in plasma physics, particle accelerators, mass spectrometers, and astrophysical systems (e.g., solar wind dynamics).</p>
+<p><strong>Key Applications of the Lorentz Force</strong></p>
+<p><strong>(a) Particle Accelerators (Cyclotrons, Synchrotrons)</strong></p>
+<p><strong>Magnetic Field Role</strong>: Confines particles into circular orbits via centripetal Lorentz force.</p>
+<p><strong>Electric Field Role</strong>: Accelerates particles at gaps between "Dees" (in cyclotrons).</p>
+<p><strong>(b) Mass Spectrometers</strong></p>
+<p><strong>Principle:</strong> Particles with different <span class="arithmatex">\(\frac{q}{m}\)</span> ratios follow distinct trajectories in a uniform B-field, allowing mass separation.</p>
+<p><strong>(c) Plasma Confinement (Tokamaks)</strong></p>
+<p><strong>Magnetic Fields:</strong> Prevent plasma from contacting walls by inducing helical motion (see §3.2).</p>
+<p><strong>(d) Astrophysical Phenomena</strong></p>
+<p><strong>Charged Particle Trajectories:</strong> Cosmic rays spiral along interstellar magnetic fields.</p>
+<p><strong>Motion of Charged Particles in Different Field Configurations</strong></p>
+<p><strong>Uniform Magnetic Field (E=0)</strong></p>
+<p>The force reduces to:</p>
+<div class="arithmatex">\[F = qE + qv \times B\]</div>
+<p>Trajectory: Circular or helical motion.</p>
+<p><strong>Key Parameters:</strong></p>
+<p>Larmor Radius (Gyroradius):</p>
+<div class="arithmatex">\[r_L = \frac{m v_\perp}{|q| B}\]</div>
+<p>where v⊥ = velocity perpendicular to B.</p>
+<p>Cyclotron Frequency:</p>
+<div class="arithmatex">\[\omega_c = \frac{|q|B}{m}\]</div>
+<p><strong>Combined Uniform E and B Fields</strong></p>
+<p><span class="arithmatex">\(\text{If } E \parallel B:\)</span></p>
+<p>Particle accelerates along <span class="arithmatex">\(B\)</span> while spiraling (helical trajectory).</p>
+<p><span class="arithmatex">\(\text{If } E \perp B:\)</span></p>
+<p>Drift Velocity:</p>
+<div class="arithmatex">\[v_E = \frac{E \times B}{B^2}\]</div>
+<p>(Particle drifts perpendicular to both fields.)</p>
+<p><strong><span class="arithmatex">\(Crossed Fields (E⊥B)\)</span></strong></p>
+<p>Special Case: Hall Effect (charge carriers drift laterally in conductors).</p>
+<p>Trajectory: Cycloidal (combination of circular and linear motion).</p>
+<p><strong>Numerical Simulation Approach</strong>
+Equations of Motion</p>
+<p>From Newton’s second law:</p>
+<div class="arithmatex">\[\frac{dv}{dt} = \frac{q}{m} (E + v \times B)\]</div>
+<div class="arithmatex">\[\frac{dr}{dt} = v\]</div>
+<p><strong>Numerical Methods:</strong></p>
+<p>Euler Method (simple but less accurate):</p>
+<div class="arithmatex">\[v_{n+1} = v_n + \frac{q}{m} (E + v_n \times B) \Delta t\]</div>
+<p>Runge-Kutta (RK4) (higher precision):</p>
+<p>Uses weighted averages of intermediate steps.</p>
+<p><strong>Key Visualizations</strong></p>
+<p><strong>Helical Motion (uniform B):</strong></p>
+<p>3D plot of 
+z-axis progression with circular xy-motion.</p>
+<p><strong>Drift Motion <span class="arithmatex">\((E⊥B)\)</span></strong></p>
+<p>Curved trajectory with net drift perpendicular to both fields.</p>
+<p><strong>Larmor Radius Variation:</strong></p>
+<p><span class="arithmatex">\(\text{Plot } r_L \text{ vs. } B \text{ for fixed } v_\perp\)</span></p>
+<p><strong>Practical Implications</strong></p>
+<p><strong>(a) Cyclotrons</strong></p>
+<p>Resonance Condition: RF electric field matches <span class="arithmatex">\(ω_c\)</span>.</p>
+<p>Particle Energy:</p>
+<div class="arithmatex">\[E_k = \frac{q^2 B^2 r^2}{2m}\]</div>
+<p>(where r = orbit radius).</p>
+<p><strong>(b) Mass Spectrometers</strong></p>
+<p>Ion Separation:</p>
+<div class="arithmatex">\[r = \frac{mv}{qB}\]</div>
+<p>(heavier ions curve less).</p>
+<p><strong>(c) Magnetic Mirrors (Fusion Devices)</strong></p>
+<p>Principle: Non-uniform B-fields reflect particles via magnetic moment conservation.</p>
+<p><strong>Extensions to Complex Scenarios</strong></p>
+<p><strong>Non-Uniform Fields:</strong></p>
+<p>Gradient-B drifts, curvature drifts.</p>
+<p><strong>Relativistic Effects:</strong></p>
+<p><span class="arithmatex">\(\text{For } v \approx c,m \to \gamma m_0\)</span></p>
+<p><strong>Multi-Particle Systems:</strong></p>
+<p>Plasma simulations via Particle-in-Cell (PIC) methods.</p>
+<p><strong>Graphical Representations</strong></p>
+<p><strong>Helical Motion in Uniform Magnetic Field (3D Plot) python</strong></p>
+<p><img alt="alt text" src="../image.png"/></p>
+<p><strong>E×B Drift in Crossed Fields (2D Plot)</strong></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><strong>Larmor Radius vs Magnetic Field Strength</strong></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
+<p><strong>Conclusion</strong></p>
+<p>The Lorentz force dictates charged particle motion in laboratory, industrial, and cosmic environments. Simulations reveal:</p>
+<p>Guiding center drifts in crossed fields.</p>
+<p>Resonant acceleration in cyclotrons.</p>
+<p>Mass-dependent trajectories in spectrometers.</p>
+<p>Future directions could explore stochastic fields or quantum effects (e.g., Landau quantization).</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
