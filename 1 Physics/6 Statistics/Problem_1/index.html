@@ -172,6 +172,157 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<p><strong>1. Theoretical Foundation of the Central Limit Theorem (CLT)</strong></p>
+<p>The Central Limit Theorem (CLT) is a fundamental concept in probability theory and statistics, stating that:</p>
+<p>"Given a sufficiently large sample size n, the sampling distribution of the sample mean <span class="arithmatex">\(\overline{X}\)</span> will approximate a normal distribution, regardless of the population's original distribution."</p>
+<p><strong>Mathematical Formulation</strong></p>
+<p>For a population with:</p>
+<ul>
+<li>
+<p>Mean <span class="arithmatex">\(\mu\)</span></p>
+</li>
+<li>
+<p>Variance <span class="arithmatex">\(\sigma^2\)</span></p>
+</li>
+</ul>
+<p>The sampling distribution of the sample mean <span class="arithmatex">\(\overline{X}\)</span> will have:</p>
+<p>Mean: <span class="arithmatex">\(\mu_{\overline{X}} = \mu\)</span></p>
+<p>Standard Error (SE): <span class="arithmatex">\(\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\)</span></p>
+<p>As <span class="arithmatex">\(n→∞\)</span> , the distribution of <span class="arithmatex">\(\overline{X}\)</span> converges to:</p>
+<div class="arithmatex">\[\overline{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)\]</div>
+<p><strong>2. Simulation Methodology</strong></p>
+<p><strong>Step 1: Define Population Distributions</strong></p>
+<p>We examine three distinct distributions:</p>
+<p><strong>Uniform Distribution</strong></p>
+<div class="arithmatex">\[X∼Uniform(a,b)\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\text{Mean: } \mu = \frac{a+b}{2}\)</span></p>
+</li>
+<li>
+<p>Variance: <span class="arithmatex">\(\sigma^2 = \frac{(b-a)^2}{12}\)</span></p>
+</li>
+</ul>
+<p><strong>Exponential Distribution</strong></p>
+<div class="arithmatex">\[X∼Exp(λ)\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\text{Mean: } \mu = \frac{1}{\lambda}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Variance: } \sigma^2 = \frac{1}{\lambda^2}\)</span></p>
+</li>
+</ul>
+<p><strong>Binomial Distribution</strong></p>
+<div class="arithmatex">\[X∼Binomial(n,p)\]</div>
+<ul>
+<li>
+<p><span class="arithmatex">\(\text{Mean: } \mu = np\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Variance: } \sigma^2 = np(1-p)\)</span></p>
+</li>
+</ul>
+<p><strong>Step 2: Generate Sampling Distributions</strong></p>
+<p>For each population:</p>
+<p>Draw <span class="arithmatex">\(k\)</span> random samples of size <span class="arithmatex">\(n\)</span>.</p>
+<p>Compute the sample mean <span class="arithmatex">\(\overline{X}\)</span> for each sample.</p>
+<p><span class="arithmatex">\(\text{Repeat for increasing } n \text{ (e.g., } n=5, 10, 30, 50)\)</span></p>
+<p><strong>Step 3: Analyze Convergence to Normality</strong></p>
+<p>For small <span class="arithmatex">\(n\)</span>, the sampling distribution resembles the population.</p>
+<p>For large <span class="arithmatex">\(n\)</span>, it converges to a Gaussian distribution.</p>
+<p><strong>Key Observations</strong></p>
+<p><strong><span class="arithmatex">\((A)\)</span> Impact of Sample Size <span class="arithmatex">\((n)\)</span></strong></p>
+<ul>
+<li>Small n (e.g., 5):</li>
+</ul>
+<p>Sampling distribution retains shape of the population.</p>
+<p>Exponential → Right-skewed, Binomial → Discrete.</p>
+<ul>
+<li>Large n (e.g., 50):</li>
+</ul>
+<p>All distributions converge to a symmetric bell curve.</p>
+<p><strong>(B) Role of Population Variance <span class="arithmatex">\(({\sigma^2})\)</span></strong></p>
+<p>Higher variance widens the sampling distribution:</p>
+<div class="arithmatex">\[\sigma_{\overline{X}} = \frac{\sigma}{\sqrt{n}}\]</div>
+<p><span class="arithmatex">\(\text{Uniform (low } \sigma^2 \text{): Faster convergence.}\)</span></p>
+<p><span class="arithmatex">\(\text{Exponential (high } \sigma^2 \text{): Requires larger } n\)</span></p>
+<p><strong>Practical Applications of CLT</strong></p>
+<p><strong>(1) Estimating Population Parameters</strong></p>
+<ul>
+<li>
+<p>Example: Polling (sample mean <span class="arithmatex">\(\overline{X}\)</span> approximates <span class="arithmatex">\(μ\)</span>).</p>
+</li>
+<li>
+<p>Confidence Intervals:</p>
+</li>
+</ul>
+<div class="arithmatex">\[X \pm z \cdot \frac{\sigma}{\sqrt{n}}\]</div>
+<p><strong>(2)Quality Control (Manufacturing)</strong></p>
+<ul>
+<li>Control Charts: Monitor if process means remain within <span class="arithmatex">\(\mu \pm 3 \frac{\sigma}{\sqrt{n}}\)</span></li>
+</ul>
+<p><strong>(3) Financial Risk Modeling</strong></p>
+<ul>
+<li>Portfolio Returns: Sum of asset returns → Normal distribution (CLT).</li>
+</ul>
+<p><strong>Limitations and Extensions</strong></p>
+<p><strong>When CLT Fails</strong></p>
+<ul>
+<li>
+<p>Heavy-Tailed Distributions (e.g., Cauchy): No finite variance → No CLT.</p>
+</li>
+<li>
+<p>Extremely Small n: Non-normal sampling distribution.</p>
+</li>
+</ul>
+<p><strong>Advanced Considerations</strong></p>
+<ul>
+<li>
+<p>Berry-Esseen Theorem: Quantifies convergence speed.</p>
+</li>
+<li>
+<p>Multivariate CLT: Extends to vector-valued distributions.</p>
+</li>
+</ul>
+<p><strong>Visualizing the CLT (Conceptual Plots)</strong></p>
+<p><strong>Expected Simulation Outputs</strong></p>
+<p><strong>Histograms of <span class="arithmatex">\(\overline{X}\)</span> for Increasing n</strong></p>
+<ul>
+<li>
+<p>Left: Original population (e.g., exponential).</p>
+</li>
+<li>
+<p>Right: Sampling distribution (becoming Gaussian).</p>
+</li>
+</ul>
+<p><strong>Q-Q Plots</strong></p>
+<p>Confirms normality by comparing quantiles to <span class="arithmatex">\(N(0,1)\)</span></p>
+<p><strong>Convergence Animation</strong></p>
+<ul>
+<li>Dynamic plot showing distribution evolving with <span class="arithmatex">\(n\)</span>.</li>
+</ul>
+<p><strong>Conclusion</strong></p>
+<p>The CLT bridges theory and practice, enabling:</p>
+<ul>
+<li>
+<p>Reliable inference from samples.</p>
+</li>
+<li>
+<p>Simplified modeling of complex systems.</p>
+</li>
+<li>
+<p>Robust decision-making in uncertain environments.</p>
+</li>
+</ul>
+<p><strong>Graphic Examples</strong></p>
+<p><strong>Convergence of Sample Means (Uniform Distribution)</strong></p>
+<p><img alt="
+" src="../image.png"/></p>
+<p><strong>CLT for Skewed Data (Exponential Distribution)</strong></p>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><strong>Q-Q Plot for Normality Check</strong></p>
+<p><img alt="alt text" src="../image-2.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
