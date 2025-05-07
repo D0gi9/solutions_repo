@@ -172,6 +172,106 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<p><strong>Estimating π Using Monte Carlo Methods</strong></p>
+<p><strong>Introduction to Monte Carlo Methods</strong></p>
+<p>Monte Carlo methods are computational algorithms that rely on repeated random sampling to approximate numerical results. They are particularly useful for problems where analytical solutions are difficult or impossible to derive. One classic application is estimating the value of <span class="arithmatex">\(π\)</span> using geometric probability.</p>
+<p><strong>Part 1: Estimating <span class="arithmatex">\(π\)</span> Using a Circle</strong></p>
+<p><strong>Theoretical Foundation</strong></p>
+<p>Consider a unit circle (radius = 1) inscribed inside a square with side length = 2.</p>
+<p><strong>Area of the circle:</strong></p>
+<div class="arithmatex">\[A_{\text{circle}} = \pi r^2 = \pi (1)^2 = \pi\]</div>
+<p><strong>Area of the square:</strong></p>
+<div class="arithmatex">\[A_{\text{square}} = (2)^2 = 4\]</div>
+<p><strong>Ratio of areas:</strong></p>
+<div class="arithmatex">\[\frac{A_{\text{circle}}}{A_{\text{square}}} = \frac{\pi}{4}
+\]</div>
+<p>If we randomly scatter points uniformly inside the square, the probability that a point lands inside the circle is:</p>
+<div class="arithmatex">\[P(\text{inside circle}) = \frac{\pi}{4}\]</div>
+<p>Rearranging, we estimate:</p>
+<div class="arithmatex">\[\pi \approx 4 \times \left( \frac{\text{Number of points inside circle}}{\text{Total points}} \right)\]</div>
+<p><strong>Simulation Steps</strong></p>
+<ul>
+<li>
+<p>Generate random points <span class="arithmatex">\((x,y)\)</span> where <span class="arithmatex">\(x,y\)</span> <span class="arithmatex">\(∈\)</span> <span class="arithmatex">\([−1,1]\)</span>.</p>
+</li>
+<li>
+<p>Count points where $x^2 + y^2 ≤ 1 $ (inside the circle).</p>
+</li>
+<li>
+<p>Compute the ratio and multiply by <span class="arithmatex">\(4\)</span> to estimate <span class="arithmatex">\(π\)</span>.</p>
+</li>
+</ul>
+<p><strong>Convergence Analysis</strong></p>
+<ul>
+<li>
+<p>Accuracy improves with more points (Law of Large Numbers).</p>
+</li>
+<li>
+<p>Error decreases proportionally to <span class="arithmatex">\(\frac{1}{\sqrt{N}}\)</span> (Monte Carlo convergence rate).</p>
+</li>
+</ul>
+<p><strong>Visualization</strong></p>
+<p>A scatter plot of points inside (blue) and outside (red) the circle illustrates the method.</p>
+<p><strong>Part 2: Estimating π Using Buffon’s Needle</strong></p>
+<p><strong>Theoretical Foundation</strong></p>
+<p>Buffon’s Needle is a probability experiment where a needle of length <span class="arithmatex">\(L\)</span> is dropped onto a plane with parallel lines spaced distance 
+<span class="arithmatex">\(D\)</span> apart.</p>
+<p><strong>Probability of crossing a line:</strong></p>
+<div class="arithmatex">\[P(\text{cross}) = \frac{2L}{\pi D}\]</div>
+<p>Solving for 
+<span class="arithmatex">\(π\)</span>:</p>
+<div class="arithmatex">\[\pi \approx \frac{2L \cdot N}{D \cdot C}\]</div>
+<p>where:</p>
+<p>N = Number of needle drops</p>
+<p>C = Number of crossings</p>
+<p><strong>Simulation Steps</strong></p>
+<p>Randomly generate needle positions (midpoint 
+<span class="arithmatex">\(x\)</span>, angle <span class="arithmatex">\(θ\)</span>).</p>
+<p>Check if the needle crosses a line:</p>
+<p><span class="arithmatex">\(\text{A needle crosses if } x \pm \frac{L}{2} \sin \theta \text{ exceeds } D.\)</span></p>
+<p>Estimate 
+<span class="arithmatex">\(π\)</span> using the formula above.</p>
+<p><strong>Convergence Analysis</strong></p>
+<ul>
+<li>
+<p>Slower convergence than the circle method due to lower efficiency.</p>
+</li>
+<li>
+<p>Optimal setup: 
+<span class="arithmatex">\(L=D\)</span> maximizes accuracy.</p>
+</li>
+</ul>
+<p><strong>Visualization</strong></p>
+<p>A plot of needles (lines) overlaid on parallel grid lines highlights crossings.</p>
+<p><strong>Practical Implications</strong></p>
+<p>Circle Method: Used in high-performance computing for benchmarking.</p>
+<p>Buffon’s Needle: Demonstrates geometric probability in classrooms.</p>
+<p><strong>Limitations and Extensions</strong></p>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>
+<p>Both methods require many iterations for high precision.</p>
+</li>
+<li>
+<p>Buffon’s Needle is sensitive to 
+<span class="arithmatex">\(L/D\)</span> ratio.</p>
+</li>
+</ul>
+<p><strong>Extensions:</strong></p>
+<p>3D Monte Carlo: Estimate π using sphere-cube volume ratios.</p>
+<p>Importance Sampling: Reduce variance in estimations.</p>
+<p><strong>Graph Exxamples</strong></p>
+<p><strong>Visualizes the proportion of points inside/outside the unit circle</strong></p>
+<p><img alt="alt text" src="../image-3.png"/></p>
+<p><strong>Demonstrates how accuracy improves with more points</strong></p>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<p><strong>Shows needle drops and line crossings</strong></p>
+<p><img alt="alt text" src="../image-5.png"/></p>
+<p><strong>Conclusion</strong></p>
+<p>Monte Carlo methods provide intuitive yet powerful ways to estimate <span class="arithmatex">\(π\)</span>:</p>
+<p>The circle method is efficient and widely used.</p>
+<p>Buffon’s Needle offers historical and educational insights.</p>
+<p>Both methods highlight how randomness can solve deterministic problems, bridging geometry, probability, and computation.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
